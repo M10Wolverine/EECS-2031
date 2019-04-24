@@ -1,0 +1,364 @@
+0) 
+red 301 % sh
+sh-4.2$ ls
+2021     Documents  eclipse-workspace  lab0_workspace  mail   Pictures  submit 2030  Templates  www
+Desktop  Downloads  EECS2030           lab0.zip        Music  Public    submit 2031  Videos
+sh-4.2$ cd submit\ 2031
+sh-4.2$ ls
+Lab1  Lab2  Lab3  Lab4  Lab5  Lab6
+sh-4.2$ mkdir Lab7
+sh-4.2$ cd Lab7
+
+1) 
+sh-4.2$ cp /eecs/dept/course/2018-19/W/2031Z/xxx /cs/home/alanzhan/submit\ 2031/Lab7
+
+2)
+sh-4.2$ ls xxx
+xxx
+
+3) 
+sh-4.2$ cp /eecs/dept/course/2018-19/W/2031Z/xFile? /cs/home/alanzhan/submit\ 2031/Lab7
+
+4) 
+sh-4.2$ ls
+xFile2  xFile3  xxx
+
+5) 
+sh-4.2$ mv xxx xFile1
+sh-4.2$ ls
+xFile1  xFile2  xFile3
+
+6) 
+sh-4.2$ echo $?
+0
+
+7)
+sh-4.2$ mkdir 2019
+sh-4.2$ mkdir /cs/home/alanzhan/submit\ 2031/Lab7/2019/lab7a
+
+8)
+sh-4.2$ ls -R 2019
+2019:
+lab7a
+
+2019/lab7a:
+
+9)
+sh-4.2$ rmdir /cs/home/alanzhan/submit\ 2031/Lab7/2019/lab7a
+sh-4.2$ rmdir 2019
+
+10)
+sh-4.2$ ls 2019
+ls: cannot access 2019: No such file or directory
+
+11)
+sh-4.2$ mkdir 2019/lab7a
+mkdir: cannot create directory ‘2019/lab7a’: No such file or directory
+sh-4.2$ echo $?
+1
+
+12)
+sh-4.2$ mkdir -p 2019/lab7a
+sh-4.2$ echo $?
+0
+sh-4.2$ ls -r
+xFile3  xFile2  xFile1  2019
+sh-4.2$ ls -R
+.:
+2019  xFile1  xFile2  xFile3
+
+./2019:
+lab7a
+
+./2019/lab7a:
+
+13)
+sh-4.2$ ls
+2019  xFile1  xFile2  xFile3
+sh-4.2$ mv xFile1 2019/lab7a
+sh-4.2$ ls
+2019  xFile2  xFile3
+
+14)
+sh-4.2$ mv xFile? 2019/lab7a
+sh-4.2$ ls
+2019
+
+15)
+sh-4.2$ ls -l -R 2019
+2019:
+total 0
+drwx------ 2 alanzhan ugrad 64 Apr  8 21:19 lab7a
+
+2019/lab7a:
+total 12
+-rwx------ 1 alanzhan ugrad 145 Apr  8 21:08 xFile1
+-rwx------ 1 alanzhan ugrad 145 Apr  8 21:09 xFile2
+-rwx------ 1 alanzhan ugrad  87 Apr  8 21:09 xFile3
+
+16)
+sh-4.2$ cd 2019
+sh-4.2$ ls
+lab7a
+sh-4.2$ ls -l lab7a
+total 12
+-rwx------ 1 alanzhan ugrad 145 Apr  8 21:08 xFile1
+-rwx------ 1 alanzhan ugrad 145 Apr  8 21:09 xFile2
+-rwx------ 1 alanzhan ugrad  87 Apr  8 21:09 xFile3
+
+17)
+sh-4.2$ ls -l
+total 0
+drwx------ 2 alanzhan ugrad 64 Apr  8 21:19 lab7a
+
+18)
+sh-4.2$ ls
+lab7a
+sh-4.2$ cp -r lab7a lab7b
+sh-4.2$ ls
+lab7a  lab7b
+
+19)
+sh-4.2$ ls -l *
+lab7a:
+total 12
+-rwx------ 1 alanzhan ugrad 145 Apr  8 21:08 xFile1
+-rwx------ 1 alanzhan ugrad 145 Apr  8 21:09 xFile2
+-rwx------ 1 alanzhan ugrad  87 Apr  8 21:09 xFile3
+
+lab7b:
+total 12
+-rwx------ 1 alanzhan ugrad 145 Apr  8 21:22 xFile1
+-rwx------ 1 alanzhan ugrad 145 Apr  8 21:22 xFile2
+-rwx------ 1 alanzhan ugrad  87 Apr  8 21:22 xFile3
+
+20)
+sh-4.2$ rmdir lab7a
+rmdir: failed to remove ‘lab7a’: Directory not empty
+
+22)
+sh-4.2$ rm -r lab7a
+sh-4.2$ ls
+lab7b
+
+23)
+sh-4.2$ echo $?
+0
+sh-4.2$ ls
+lab7b
+
+24)
+sh-4.2$ mv lab7b/xFile1 .
+
+25)
+sh-4.2$ find . -name "xFile*"
+./lab7b/xFile2
+./lab7b/xFile3
+./xFile1
+
+26)
+sh-4.2$ mv lab7b lab7working
+sh-4.2$ ls
+lab7working  xFile1
+
+27)
+sh-4.2$ cd lab7working
+
+28)
+sh-4.2$ pwd
+/cs/home/alanzhan/submit 2031/Lab7/2019/lab7working
+
+29)
+sh-4.2$ mv ../xFile1 .
+
+30)
+sh-4.2$ ls
+xFile1  xFile2  xFile3
+sh-4.2$ ls -l
+total 12
+-rwx------ 1 alanzhan ugrad 145 Apr  8 21:22 xFile1
+-rwx------ 1 alanzhan ugrad 145 Apr  8 21:22 xFile2
+-rwx------ 1 alanzhan ugrad  87 Apr  8 21:22 xFile3
+
+31)
+sh-4.2$ cat xFile1
+John Smith  1222 26 Apr 1956
+Tony Jones  2152 20 Mar 1950
+John Duncan 2    20 Jan 1966
+Larry Jones 3223 20 Dec 1946
+Lisa Sue    1222 4  Jul 1980
+
+32)
+sh-4.2$ more xFile?
+::::::::::::::
+xFile1
+::::::::::::::
+John Smith  1222 26 Apr 1956
+Tony Jones  2152 20 Mar 1950
+John Duncan 2    20 Jan 1966
+Larry Jones 3223 20 Dec 1946
+Lisa Sue    1222 4  Jul 1980
+::::::::::::::
+xFile2
+::::::::::::::
+John Smith  1222 26 Apr 1956
+Tony Jones  2152 20 Mar 1950
+John Duncan 2    20 Jan 1966
+Larry Jones 3223 20 Dec 1946
+Lisa Sue    1222 4  Jul 1980
+::::::::::::::
+xFile3
+::::::::::::::
+John Smith  1222 26 Apr 1956
+John Duncan 2    20 Jan 1966
+Larry Jones 3223 20 Dec 1946
+
+33)
+sh-4.2$ wc -l xFile1
+5 xFile1
+
+34)
+sh-4.2$ head -2 xFile1
+John Smith  1222 26 Apr 1956
+Tony Jones  2152 20 Mar 1950
+
+35)
+sh-4.2$ tail -3 xFile2
+John Duncan 2    20 Jan 1966
+Larry Jones 3223 20 Dec 1946
+Lisa Sue    1222 4  Jul 1980
+
+36)
+sh-4.2$ cmp xFile1 xFile2
+sh-4.2$ echo $?
+0
+
+37)
+sh-4.2$ diff xFile1 xFile2
+sh-4.2$ echo $?
+0
+
+38)
+sh-4.2$ diff xFile1 xFile3
+2d1
+< Tony Jones  2152 20 Mar 1950
+5d3
+< Lisa Sue    1222 4  Jul 1980
+sh-4.2$ diff xFile2 xFile3
+2d1
+< Tony Jones  2152 20 Mar 1950
+5d3
+< Lisa Sue    1222 4  Jul 1980
+sh-4.2$ echo $?
+1
+
+39)
+sh-4.2$ cmp xFile1 xFile3
+xFile1 xFile3 differ: byte 30, line 2
+sh-4.2$ echo $?
+1
+
+40)
+sh-4.2$ cat xFile1 xFile2 xFile3 > xFile123
+sh-4.2$ more xFile123
+John Smith  1222 26 Apr 1956
+Tony Jones  2152 20 Mar 1950
+John Duncan 2    20 Jan 1966
+Larry Jones 3223 20 Dec 1946
+Lisa Sue    1222 4  Jul 1980
+John Smith  1222 26 Apr 1956
+Tony Jones  2152 20 Mar 1950
+John Duncan 2    20 Jan 1966
+Larry Jones 3223 20 Dec 1946
+Lisa Sue    1222 4  Jul 1980
+John Smith  1222 26 Apr 1956
+John Duncan 2    20 Jan 1966
+Larry Jones 3223 20 Dec 1946
+
+41)
+sh-4.2$ sort xFile123
+John Duncan 2    20 Jan 1966
+John Duncan 2    20 Jan 1966
+John Duncan 2    20 Jan 1966
+John Smith  1222 26 Apr 1956
+John Smith  1222 26 Apr 1956
+John Smith  1222 26 Apr 1956
+Larry Jones 3223 20 Dec 1946
+Larry Jones 3223 20 Dec 1946
+Larry Jones 3223 20 Dec 1946
+Lisa Sue    1222 4  Jul 1980
+Lisa Sue    1222 4  Jul 1980
+Tony Jones  2152 20 Mar 1950
+Tony Jones  2152 20 Mar 1950
+
+42)
+sh-4.2$ sort xFile123 | uniq
+John Duncan 2    20 Jan 1966
+John Smith  1222 26 Apr 1956
+Larry Jones 3223 20 Dec 1946
+Lisa Sue    1222 4  Jul 1980
+Tony Jones  2152 20 Mar 1950
+
+43)
+sh-4.2$ sort xFile123 | uniq > xFile123compact
+
+44)
+sh-4.2$ cat xFile123compact
+John Duncan 2    20 Jan 1966
+John Smith  1222 26 Apr 1956
+Larry Jones 3223 20 Dec 1946
+Lisa Sue    1222 4  Jul 1980
+Tony Jones  2152 20 Mar 1950
+
+
+45)
+sh-4.2$ chmod 775 xFile1
+sh-4.2$ ls -l xFile1
+-rwxrwxr-x 1 alanzhan ugrad 145 Apr  8 21:22 xFile1
+Change user/group permissions to read/write/execute, others permissions to read/execute
+
+46)
+sh-4.2$ chmod 777 xFile1
+sh-4.2$ ls -l xFile1
+-rwxrwxrwx 1 alanzhan ugrad 145 Apr  8 21:22 xFile1
+Give everyone read/write/execute permission
+
+47)
+sh-4.2$ chmod 744 xFile123compact
+sh-4.2$ ls -l xFile123compact
+-rwxr--r-- 1 alanzhan ugrad 145 Apr  8 22:46 xFile123compact
+
+48)
+sh-4.2$ chmod 754 xFile123compact
+sh-4.2$ ls -l xFile123compact
+-rwxr-xr-- 1 alanzhan ugrad 145 Apr  8 22:46 xFile123compact
+
+49)
+sh-4.2$ chmod 770 xFile123compact
+sh-4.2$ ls -l xFile123compact
+-rwxrwx--- 1 alanzhan ugrad 145 Apr  8 22:46 xFile123compact
+
+50)
+sh-4.2$ chmod 753 xFile123compact
+sh-4.2$ ls -l xFile123compact
+-rwxr-x-wx 1 alanzhan ugrad 145 Apr  8 22:46 xFile123compact
+
+51)
+sh-4.2$ chmod 644 xFile123compact
+sh-4.2$ ls -l xFile123compact
+-rw-r--r-- 1 alanzhan ugrad 145 Apr  8 22:46 xFile123compact
+
+52)
+sh-4.2$ cat >> xFile1
+this is a xxx new line
+sh-4.2$ cat xFile1
+John Smith  1222 26 Apr 1956
+Tony Jones  2152 20 Mar 1950
+John Duncan 2    20 Jan 1966
+Larry Jones 3223 20 Dec 1946
+Lisa Sue    1222 4  Jul 1980
+this is a xxx new line
+
+
+
+

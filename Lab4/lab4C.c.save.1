@@ -1,0 +1,58 @@
+/***************************************
+* EECS2031Z Lab1 *
+* Filename: Lab1A *
+* Author: Zhang, Alan *
+* Email: alanzhan@my.yorku.ca *
+* EECS_username: alanzhan *
+* York Student #: 215677214 * 
+****************************************/
+
+#include <stdio.h>
+#include <string.h>
+
+int isLeap (int);
+
+char quit[] = "quit";
+
+int main(){ 
+
+  char input[30];
+  int i; int dates;
+  int day, year, month;
+
+  printf("Enter 'month-day year' : " );
+  fgets(input, 30, stdin);  /* read in the whole line */
+
+  while (strcmp(quit, input) )
+   {
+    /* manipulate the input, count days and display */ 
+
+
+    // read again
+    printf("Enter 'month-day year': " );
+    fgets(input, 30, stdin);  /* read in the whole line */
+  }
+ 
+  return 0;
+ 
+
+}
+
+
+int countDays(int y, int m, int d)
+{
+   int numDays=0;   
+
+   if (isLeap(y))
+   {
+      if ((m-1)%2 == 1)
+      {
+	numDays+=
+      }
+   }
+   else
+   {
+      if ((m-1)%2 	
+   }
+}
+

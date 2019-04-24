@@ -1,0 +1,21 @@
+Breakpoint 1
+display mainA = 1
+display mainB = 20000
+
+Breakpoint2
+display x = 1
+display y = 20000
+display mainA = No symbol "mainA" in current context
+display mainB = No symbol "mainB" in current context
+(This is because variables mainA and mainB don't exist in the method; their values are passed to temporary variables x and y)
+
+Breakpoint3
+display x = 20000
+display y = 1
+
+Breakpoint 4
+display mainA = 1
+display mainB = 20000
+display x = No symbol "x" in current context
+display y = No symbol "y" in current context
+(Values of x, y were swapped and returned to mainA, mainB. These temporary variables are then destroyed and no longer in context)
